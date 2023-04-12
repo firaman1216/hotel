@@ -1,0 +1,61 @@
+ 
+ #include <iostream>
+ #include <fstream>
+ using namespace std;
+ 
+ 
+  void about()
+{
+cout << "..........ABOUT THE PROJECT............." <<endl;
+cout <<"_______________________________________________"<<endl;
+cout << "This project is especially made for hotel reservation to ";
+cout << "Organize and perform tasks useful for ";
+cout << "Reservation.It can record and analyze data of the guests."<<endl;
+cout<<  "But, you have to login the project using password and username in file with their respective name that found in the same folder with the project sorce code"<<endl;
+cout << "You can see the record of previous guests stayed in the room."<<endl;
+cout << "Additionally, you can also reserve the  rooms for new guests as well." <<endl;
+cout << "Further more, you can also calculate the bill of guests based on the time they stayed in the room,";
+cout << "This project is user friendly and one can use it easliy "<<endl;
+cout << "Thank you!!!" <<endl;
+cout <<  "AAU,COMPUTER SCIENCE DEPARTMENT, SECTION TWO STUDENTS,GROUP PROJCET OF APRIL 2022"<<endl;
+cout <<endl;
+cout << "Bye, Bye"<<endl;
+  }
+  
+   void help()
+   {
+cout << "This projcet according desired entries by the user. ";
+cout << "The reservation data will be stored in a text file present where the project file is located.";
+cout << endl;
+cout << "If the file is not present the project will not work properly and terminate. "<<endl;
+cout << "Follow the instruction displayed on the screen and select the appropriate option to operate."<<endl;
+cout << "Good luck!!!"<<endl;
+cout <<endl;
+   }
+int login(){
+	ifstream fin1;
+	ifstream fin2;
+        int flag =1;
+	string username,line1;
+	string password,line2;
+	fin1.open("user.txt");
+	fin2.open("pass.txt");
+	cout<<"Enter user name: "<<endl;
+	while(getline(fin1,line1)){
+		if(username==line1){
+			break;
+		}
+	}
+	while(getline(fin2,line2)){
+		if(password==line2){
+			cout<<"Login succesfull!!!"<<endl;
+break;
+		}
+		else{
+			cout<<"Login failed...try aggain"<<endl;
+                        flag =0;
+		}
+	}
+	
+	return flag;
+}
